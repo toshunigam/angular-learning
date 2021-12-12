@@ -1,1 +1,4 @@
 <p>Hey {{name}} welcome to the server</p>
+<label for="servername">Server Name</label>
+<input type="text" class="form-control" (input)="onChangeServerName($event)" />
+<p>Server Name is {{serverName}}</p>

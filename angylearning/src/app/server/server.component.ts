@@ -6,4 +6,9 @@ import { Component } from "@angular/core";
 })
 export class ServerComponent{
     name = 'Resham'
+    serverName:string=''
+
+    onChangeServerName(event:Event){
+        this.serverName = (<HTMLInputElement>event.target).value;
+    }
 }
