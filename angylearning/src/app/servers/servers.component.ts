@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  allowNewServer:boolean=false
+  serverName:string='tets'
+  serverDetails:string='test'
+  
+
+  constructor(){
+    setTimeout(()=>{
+      this.allowNewServer=true
+    },2000)
+  }
+
+  onChangeServerName(event:Event){
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
 
   ngOnInit(): void {
   }
 
+  onCreateServer(){
+    console.log('coming from servers component. Mind s in server',this.serverName)
+  }
 }
