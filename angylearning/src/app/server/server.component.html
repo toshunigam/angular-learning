@@ -1,1 +1,6 @@
-<p>Hey {{name}} welcome to the server</p>
+<p 
+[ngStyle]="{backgroundColor:getColor()}"
+[ngClass]="{online: serverStatus === 'online'}"
+>
+Hey {{name}} welcome to the server
+</p>
