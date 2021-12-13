@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angylearning';
+  serverElements = [{
+    type:'server', name:'Test', content:'Lorem Ipsum'
+  
+  }]
 }
