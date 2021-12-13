@@ -9,6 +9,23 @@ export class AppComponent {
   title = 'angylearning';
   serverElements = [{
     type:'server', name:'Test', content:'Lorem Ipsum'
-  
   }]
+
+  onServerAdded(serverData : {serverName:string, serverContent:string}){
+    this.serverElements.push({
+      type:'server',
+      name:serverData.serverName,
+      content:serverData.serverContent
+    })
+
+  }
+
+  onBlueprintAdded(blueprintData : {serverName:string, serverContent:string}){
+    this.serverElements.push({
+      type:'blueprint',
+      name:blueprintData.serverName,
+      content:blueprintData.serverContent
+    })
+
+  }
 }
