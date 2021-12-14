@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -11,9 +11,16 @@ export class ServerElementComponent implements OnInit {
 
   constructor() {
     this.element = {type:'',name:'',content:''}
-   }
+    console.log('constructor called')
+  }
 
   ngOnInit(): void {
+    console.log('ngOninit called!')
+  }
+
+  ngOnChanges(changes:SimpleChange){
+    console.log('ngOnChanges called!')
+    console.log(changes)
   }
 
 }
