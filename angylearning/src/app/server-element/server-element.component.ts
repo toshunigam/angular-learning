@@ -23,4 +23,27 @@ export class ServerElementComponent implements OnInit {
     console.log(changes)
   }
 
+  ngDoCheck(){
+    console.log('ngDoCheck called!')
+  }
+
+  ngAfterContentInit(){
+    console.log('ngAftercontentinit called!!')
+  }
+
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked called!!')
+  }
+
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit called!!')
+  }
+
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked called!!')
+  }
+
+  ngOnDestroy(){
+    console.log('ngOnDestroy called!')
+  }
 }
