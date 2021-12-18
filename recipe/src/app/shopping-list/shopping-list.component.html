@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-10">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit (createdList)="createdShoppingList($event)"></app-shopping-edit>
         <hr />
         <ul class="list-group">
             <li *ngFor="let ingredient of ingredients" class="list-group-item"><a class="list-item-link" style="cursor: pointer;">{{ ingredient.name }} ({{ ingredient.amount }})</a></li>
