@@ -10,5 +10,6 @@ export class BasicHighlightDirective implements OnInit{
 
     ngOnInit(){
         this.elementRef.nativeElement.style.backgroundColor = '#ff4500'
+        this.elementRef.nativeElement.style.color = '#ffffff'
     }
 }
