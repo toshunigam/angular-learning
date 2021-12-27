@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ShoppingsService } from 'src/app/_services/shoppings.service';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -7,15 +8,18 @@ import { Recipe } from '../../recipe.model';
   styleUrls: ['./recipe-item.component.css']
 })
 export class RecipeItemComponent implements OnInit {
-  // @Input() recipe:{name:string,amount:number}
+  
   @Input() recipe: Recipe;
   @Output() recipeSelected = new EventEmitter<void>()
 
-  constructor() {
+  constructor(private shoppingService:ShoppingsService) {
     this.recipe = {name:'',description:'',imagePath:''}
    }
 
   ngOnInit(): void {
+    const ShoppingData = this.shoppingService.addShoppingList({name:'banana',amount:12})
+    console.log(ShoppingData)
+
   }
 
   onSelected(){
