@@ -9,10 +9,6 @@ export class ProductService{
         new Product('OnePlus', 5)
     ]
 
-    constructor(){
-        
-    }
-
     addProduct(product:Product){
         this.products.push(product)
         this.productChange.emit(this.products.slice())
