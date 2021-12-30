@@ -1,2 +1,6 @@
 <app-product-form></app-product-form>
-<p>product works!</p>
+<div class="row">
+    <ul class="list-group">
+        <li *ngFor="let product of productList" class="list-group-item"><a class="list-item-link" style="cursor: pointer;">{{ product.name }} ({{ product.quantity }})</a></li>
+    </ul>
+</div>
