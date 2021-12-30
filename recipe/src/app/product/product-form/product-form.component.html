@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form>
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" name="name" class="form-control" [(ngModel)]="productName" />
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" class="form-control" [(ngModel)]="quantity" name="quantity" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 p-1">
+                    <button class="btn btn-success m-1" type="submit" (click)="addProduct()">Add</button>
+                    <button class="btn btn-danger m-1" type="button">Delete</button>
+                    <button class="btn btn-primary m-1" type="reset">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

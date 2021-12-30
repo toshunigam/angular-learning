@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductComponent } from './product/product.component';
+import { ProductFormComponent } from './product/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductComponent } from './product/product.component';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    ProductComponent
+    ProductComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
