@@ -1,10 +1,9 @@
-import { Injectable } from "@angular/core"
+import { EventEmitter, Injectable } from "@angular/core"
 import { Product } from "../shared/ingredient.model"
 
 @Injectable()
 export class ProductService{
-    // public productname:string
-
+    productChange = new EventEmitter<Product[]>()
     private products:Product[] = [
         new Product('Apple',3),
         new Product('OnePlus', 5)
@@ -16,6 +15,7 @@ export class ProductService{
 
     addProduct(product:Product){
         this.products.push(product)
+        this.productChange.emit(this.products.slice())
     }
 
     getProducts(){
