@@ -1,6 +1,9 @@
 <app-product-form></app-product-form>
 <div class="row">
     <ul class="list-group">
-        <li *ngFor="let product of productList" class="list-group-item"><a class="list-item-link" style="cursor: pointer;">{{ product.name }} ({{ product.quantity }})</a></li>
+        <li *ngFor="let product of productList" class="list-group-item">
+            <a class="list-item-link" style="cursor: pointer;">{{ product.name }} ({{ product.quantity }})</a>
+            <button class="btn btn-danger m-1 float-end" type="button" (click)="onDelete(product)">Delete</button>
+        </li>
     </ul>
 </div>

@@ -21,4 +21,9 @@ export class ProductComponent implements OnInit {
     })
   }
 
+  onDelete(product:Product){
+    // console.log(product)
+    this.productService.deleteProduct(product)
+  }
+
 }
