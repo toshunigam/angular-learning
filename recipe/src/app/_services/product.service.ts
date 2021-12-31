@@ -19,11 +19,9 @@ export class ProductService{
     }
 
     deleteProduct(product:Product){
-        console.log(product)
-        const productRemaining = this.products.filter((item)=>{
-            return product.name !== item.name
-        })
-        console.log(productRemaining)
+        // console.log(product)
+        const productRemaining = this.products.filter((item)=>product.name !== item.name)
+        // console.log(productRemaining)
         this.productChange.emit(productRemaining.slice())
     }
 }
