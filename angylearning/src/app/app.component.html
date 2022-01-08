@@ -1,11 +1,32 @@
 <div class="container">
-    <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
-    <hr/>
     <div class="row">
-        <div class="col-sx-12">
-            <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-default">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="users">Users</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['servers']">Servers</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
     </div>
-    <div class="row" appBasicHighlight>This is the example of custom directives</div>
-    <div class="row" appBetterHighlight [defaultBgColor]="'yellow'" [highlightBgColor]="'red'">This is an other example of custom directives with better approach</div>
+    <div class="row">
+        <router-outlet></router-outlet>
+
+        <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
+        <hr/>
+        <div class="row">
+            <div class="col-sx-12">
+                <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
+            </div>
+        </div>
+        <div class="row" appBasicHighlight>This is the example of custom directives</div>
+        <div class="row" appBetterHighlight [defaultBgColor]="'yellow'" [highlightBgColor]="'red'">This is an other example of custom directives with better approach</div>
+    </div>
 </div>
