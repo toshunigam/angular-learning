@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
+import { interval, Observable, Subscription } from 'rxjs';
+import { HomeService } from '../_service/home.service';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,21 @@ import { interval, Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   private firstObsSubscription?: Subscription
-  constructor() { }
-
+  constructor(public homeService: HomeService) { }
+  usertype?:string
   ngOnInit(): void {
-    this.firstObsSubscription = interval(1000).subscribe(count=>console.log(count))
+    this.homeService.userEmitter.subscribe((res)=>{
+      this.usertype = res
+    })
+// this.firstObsSubscription = interval(1000).subscribe(count=>console.log(count))
   }
 
   ngOnDestroy(){
-    this.firstObsSubscription?.unsubscribe()
+    // this.firstObsSubscription?.unsubscribe()
+  }
+
+  clickMe(){
+    this.homeService.userEmitter.next('Customer')
   }
 
 }
