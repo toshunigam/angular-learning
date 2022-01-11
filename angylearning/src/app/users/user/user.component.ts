@@ -8,14 +8,9 @@ import { HomeService } from 'src/app/_service/home.service';
 })
 export class UserComponent implements OnInit {
 
-  usertype:string='userrr'
-
-  constructor(public homeService:HomeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.homeService.userEmitter.subscribe((res)=>{
-      this.usertype = res
-    })
   }
 
 }
