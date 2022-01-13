@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { HomeService } from 'src/app/_service/home.service';
 
 @Component({
@@ -7,10 +8,13 @@ import { HomeService } from 'src/app/_service/home.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
+  @ViewChild('f') signUpForm?:NgForm
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log(this.signUpForm)
+  }
 }
