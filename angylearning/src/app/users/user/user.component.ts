@@ -9,6 +9,7 @@ import { HomeService } from 'src/app/_service/home.service';
 })
 export class UserComponent implements OnInit {
   @ViewChild('f') signUpForm?:NgForm
+  defaultQuestion='pet'
   constructor() { }
 
   ngOnInit(): void {

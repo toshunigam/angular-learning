@@ -13,13 +13,14 @@
           <br />  
           <div class="form-group">
             <label for="email">Mail</label>
-            <input type="email" id="email" class="form-control" ngModel name="email" required email />
+            <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel" />
+            <small class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid value!</small>
           </div>
         </div>
         <br />
         <div class="form-group">
           <label for="secret">Secret Question</label>
-          <select id="secret" class="form-control" ngModel name="secret">
+          <select id="secret" class="form-control" [ngModel]="defaultQuestion" name="secret" >
             <option value="pet">Your first pet?</option>
             <option value="teacher">Your first teacher</option>
           </select>
