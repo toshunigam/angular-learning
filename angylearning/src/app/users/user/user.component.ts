@@ -10,6 +10,8 @@ import { HomeService } from 'src/app/_service/home.service';
 export class UserComponent implements OnInit {
   @ViewChild('f') signUpForm?:NgForm
   defaultQuestion='pet'
+  secretAnser=''
+  genders = ['mail','female']
   constructor() { }
 
   ngOnInit(): void {
@@ -17,5 +19,12 @@ export class UserComponent implements OnInit {
 
   onSubmit(){
     console.log(this.signUpForm)
+  }
+
+  suggestUserName(){
+    const suggestedName = 'PoorPeople'
+    this.signUpForm?.form.patchValue({
+      username:suggestedName
+    })
   }
 }
