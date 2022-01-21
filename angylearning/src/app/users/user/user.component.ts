@@ -12,16 +12,30 @@ export class UserComponent implements OnInit {
   defaultQuestion='pet'
   secretAnser=''
   genders = ['mail','female']
+  user = {
+    username:'',
+    email:'',
+    question:'',
+    answer:'',
+    gender:''
+  }
+  submitted=false
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-    console.log(this.signUpForm)
+    console.log(this.signUpForm?.form.value.username)
+    this.user.username = this.signUpForm?.form.value.username
+    this.user.email = this.signUpForm?.form.value.email
+    this.user.question = this.signUpForm?.form.value.secret
+    this.user.answer = this.signUpForm?.form.value.questionAnswer
+    this.user.gender = this.signUpForm?.form.value.gender
   }
 
   suggestUserName(){
+    this.submitted = true
     const suggestedName = 'PoorPeople'
     this.signUpForm?.form.patchValue({
       username:suggestedName
