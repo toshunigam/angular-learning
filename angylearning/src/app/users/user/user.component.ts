@@ -11,7 +11,7 @@ export class UserComponent implements OnInit {
   @ViewChild('f') signUpForm?:NgForm
   defaultQuestion='pet'
   secretAnser=''
-  genders = ['mail','female']
+  genders = ['male','female']
   user = {
     username:'',
     email:'',
@@ -32,6 +32,8 @@ export class UserComponent implements OnInit {
     this.user.question = this.signUpForm?.form.value.secret
     this.user.answer = this.signUpForm?.form.value.questionAnswer
     this.user.gender = this.signUpForm?.form.value.gender
+
+    this.signUpForm?.resetForm()
   }
 
   suggestUserName(){
