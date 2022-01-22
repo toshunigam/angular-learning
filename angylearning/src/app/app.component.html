@@ -12,6 +12,9 @@
                 <li class="nav-item">
                   <a class="nav-link" routerLinkActive="active" [routerLink]="['servers']">Servers</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" [routerLink]="['products']">Products</a>
+                </li>
               </ul>
             </div>
         </nav>
@@ -19,6 +22,7 @@
     <div class="row">
         <router-outlet></router-outlet>
 
+        <hr />
         <app-cockpit (serverCreated)="onServerAdded($event)" (bpCreated)="onBlueprintAdded($event)"></app-cockpit>
         <hr/>
         <div class="row">

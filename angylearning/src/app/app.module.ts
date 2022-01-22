@@ -13,11 +13,13 @@ import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductComponent } from './product/product.component';
 
 const appRoute:Routes = [
   {path:'',component:HomeComponent},
   {path:'users',component:UsersComponent},
-  {path:'servers',component:ServersComponent}
+  {path:'servers',component:ServersComponent},
+  {path:'products',component:ProductComponent}
 ]
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoute:Routes = [
     BetterHighlightDirective,
     UsersComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
