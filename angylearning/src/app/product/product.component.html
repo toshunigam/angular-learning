@@ -8,7 +8,10 @@
 				class="form-control"
 				formControlName="title" 
 			/>
-			<small class="help-block">vidation message</small>
+			<small 
+				*ngIf="productForm.controls['title'].status==='INVALID' && productForm.controls['title'].touched"
+				class="help-block"
+			>Please enter product title</small>
 		</div>
 		<div class="form-group">
 			<label>Name</label>
@@ -18,7 +21,7 @@
 				formControlName="name" 
 			/>
 			<small 
-				*ngIf="productForm.controls['name'].pristine && productForm.controls['name'].touched"
+				*ngIf="productForm.controls['name'].status==='INVALID' && productForm.controls['name'].touched"
 				class="help-block"
 			>Please enter product name</small>
 		</div>
@@ -29,7 +32,10 @@
 				class="form-control" 
 				formControlName="quantity" 
 			/>
-			<small class="help-block">vidation message</small>
+			<small 
+				*ngIf="productForm.controls['quantity'].status==='INVALID' && productForm.controls['quantity'].touched"
+				class="help-block"
+			>Please enter product quantity</small>
 		</div>
 		<div class="form-group">
 			<label>Price</label>
@@ -38,7 +44,10 @@
 				class="form-control" 
 				formControlName="price" 
 			/>
-			<small class="help-block">vidation message</small>
+			<small 
+				*ngIf="productForm.controls['price'].status==='INVALID' && productForm.controls['price'].touched"
+				class="help-block"
+			>Please enter product quantity</small>
 		</div>
 		<div class="form-group">
 			<label>Description</label>
@@ -47,9 +56,19 @@
 				formControlName="description"
 			></textarea>
 		</div>
+		<div formArrayName="tags">
+			<h4>Add tags</h4>
+			<button
+				class="btn btn-default"
+				type="button"
+				(click)="addTags()" 
+			>Add</button>
+			<div class="form-group" *ngFor="let tag of tags.controls; let i=index;">
+				<input type="text" class="form-control" [formControlName]="i" />
+			</div>
+		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>
-
 	</form>
 </div>
