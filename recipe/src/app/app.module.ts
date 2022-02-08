@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductComponent } from './product/product.component';
 import { ProductFormComponent } from './product/product-form/product-form.component';
 import { ProductService } from './_services/product.service';
+import { ServersComponent } from './servers/servers.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProductService } from './_services/product.service';
     ShoppingEditComponent,
     DropdownDirective,
     ProductComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ServersComponent
   ],
   imports: [
     BrowserModule,
