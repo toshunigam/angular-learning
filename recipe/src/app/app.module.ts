@@ -17,6 +17,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductFormComponent } from './product/product-form/product-form.component';
 import { ProductService } from './_services/product.service';
 import { ServersComponent } from './servers/servers.component';
+import { ShortenPipe } from './shared/shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ServersComponent } from './servers/servers.component';
     DropdownDirective,
     ProductComponent,
     ProductFormComponent,
-    ServersComponent
+    ServersComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

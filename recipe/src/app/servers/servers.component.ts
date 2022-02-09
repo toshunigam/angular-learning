@@ -14,14 +14,14 @@ export class ServersComponent implements OnInit {
       started: new Date(1,1,2022)
     },
     {
-      instanceType:'Large',
+      instanceType:'large',
       name:'User Database',
       status:'stable',
       started: new Date(2,2,2022)
     },
     {
       instanceType:'small',
-      name:'Dev Server',
+      name:'Development Server',
       status:'offline',
       started: new Date(1,12,2020)
     },
