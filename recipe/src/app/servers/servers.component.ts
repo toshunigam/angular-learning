@@ -33,6 +33,8 @@ export class ServersComponent implements OnInit {
     }
   ]
 
+  fliteredState=''
+
   constructor() { }
 
   ngOnInit(): void {
