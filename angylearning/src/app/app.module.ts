@@ -14,12 +14,14 @@ import { UserComponent } from './users/user/user.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './product/product.component';
+import { FirebaseComponent } from './firebase/firebase.component';
 
 const appRoute:Routes = [
   {path:'',component:HomeComponent},
   {path:'users',component:UsersComponent},
   {path:'servers',component:ServersComponent},
-  {path:'products',component:ProductComponent}
+  {path:'products',component:ProductComponent},
+  {path:'firebase',component:FirebaseComponent}
 ]
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoute:Routes = [
     UsersComponent,
     UserComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    FirebaseComponent
   ],
   imports: [
     BrowserModule,

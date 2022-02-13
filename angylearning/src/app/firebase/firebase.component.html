@@ -1,0 +1,74 @@
+<div class="row">
+	<h3>Google Firebase Example implementation</h3>
+	<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label>Title</label>
+			<input 
+				type="text" 
+				class="form-control"
+				formControlName="title" 
+			/>
+			<small 
+				*ngIf="productForm.controls['title'].status==='INVALID' && productForm.controls['title'].touched"
+				class="help-block"
+			>Please enter product title</small>
+		</div>
+		<div class="form-group">
+			<label>Name</label>
+			<input 
+				type="text" 
+				class="form-control"
+				formControlName="name" 
+			/>
+			<small 
+				*ngIf="productForm.controls['name'].status==='INVALID' && productForm.controls['name'].touched"
+				class="help-block"
+			>Please enter product name</small>
+		</div>
+		<div class="form-group">
+			<label>Quantity</label>
+			<input 
+				type="number" 
+				class="form-control" 
+				formControlName="quantity" 
+			/>
+			<small 
+				*ngIf="productForm.controls['quantity'].status==='INVALID' && productForm.controls['quantity'].touched"
+				class="help-block"
+			>Please enter product quantity</small>
+		</div>
+		<div class="form-group">
+			<label>Price</label>
+			<input 
+				type="number" 
+				class="form-control" 
+				formControlName="price" 
+			/>
+			<small 
+				*ngIf="productForm.controls['price'].status==='INVALID' && productForm.controls['price'].touched"
+				class="help-block"
+			>Please enter product quantity</small>
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<textarea 
+				class="form-control" 
+				formControlName="description"
+			></textarea>
+		</div>
+		<div formArrayName="tags">
+			<h4>Add tags</h4>
+			<button
+				class="btn btn-default"
+				type="button"
+				(click)="addTags()" 
+			>Add</button>
+			<div class="form-group" *ngFor="let tag of tags.controls; let i=index;">
+				<input type="text" class="form-control" [formControlName]="i" />
+			</div>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+</div>
