@@ -10,7 +10,7 @@ import { FirebaseModal } from './firebase.modal';
   styleUrls: ['./firebase.component.css']
 })
 export class FirebaseComponent implements OnInit {
-  loadedPosts = []
+  loadedPosts:FirebaseModal[] = []
   sampleForm = new FormGroup({
     'title':new FormControl('',Validators.required),
     'name':new FormControl('',Validators.required),
@@ -51,6 +51,7 @@ export class FirebaseComponent implements OnInit {
     }))
     .subscribe(posts=>{
       console.log(posts)
+      this.loadedPosts = posts
     })
   }
 }
