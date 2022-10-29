@@ -19,6 +19,7 @@ import { ProductService } from './_services/product.service';
 import { ServersComponent } from './servers/servers.component';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { FilterPipe } from './shared/filter.pips';
+import { Translation } from './shared/translation.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FilterPipe } from './shared/filter.pips';
     ProductFormComponent,
     ServersComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    Translation
   ],
   imports: [
     BrowserModule,
