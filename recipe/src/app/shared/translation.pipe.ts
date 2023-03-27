@@ -9,7 +9,6 @@ import { LANG_IN_NAME, LANG_IN_TRANS } from "../_lang/lang-in";
 export class Translation implements PipeTransform{
     transform(value: any, language:string) {
         if(LANG_EN_NAME===language){
-            // LANG_EN_TRANS.value
             var langText; 
             Object.entries(LANG_EN_TRANS).forEach(([key,val])=>{
                 if(key===value){
