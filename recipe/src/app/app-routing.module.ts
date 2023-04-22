@@ -5,6 +5,12 @@ import { ProductComponent } from './product/product.component';
 const routes: Routes = [
   {
     path:"",
+    redirectTo:"product",
+    pathMatch: 'full'
+    // component:ProductComponent
+  },
+  {
+    path:"product",
     component:ProductComponent
   }
 ];
