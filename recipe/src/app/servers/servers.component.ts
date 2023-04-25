@@ -30,6 +30,12 @@ export class ServersComponent implements OnInit {
       name:'Testing Server',
       status:'stable',
       started: new Date(1,12,2022)
+    },
+    {
+      instanceType:'large',
+      name:'Radis',
+      status:'stable',
+      started: new Date(25,4,2023)
     }
   ]
 
