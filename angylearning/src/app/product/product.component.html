@@ -56,17 +56,21 @@
 				formControlName="description"
 			></textarea>
 		</div>
-		<div formArrayName="tags">
-			<h4>Add tags</h4>
-			<button
-				class="btn btn-default"
-				type="button"
-				(click)="addTags()" 
-			>Add</button>
+		<div class="row" formArrayName="tags">
+			<div class="col-6"><h4>Add tags</h4></div>
+			<div class="col-6">
+				<button
+					class="btn btn-info"
+					type="button"
+					(click)="addTags()" 
+				>Add tags</button>
+			</div>
+			
 			<div class="form-group" *ngFor="let tag of tags.controls; let i=index;">
 				<input type="text" class="form-control" [formControlName]="i" />
 			</div>
 		</div>
+		<hr />
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</div>

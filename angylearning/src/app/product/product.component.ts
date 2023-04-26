@@ -30,6 +30,7 @@ export class ProductComponent implements OnInit {
   onSubmit(){
     console.log(this.productForm)
     console.log(this.productForm.value.title)
+    console.log(this.productForm.value.tags)
   }
 
   get tags(){
