@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 
   allowNewServer:boolean=false
-  serverName:string='tets'
-  serverDetails:string='test'
+  serverName:string='test'
+  serverDetails:string='test detail'
   serverCreated:boolean = false
 
   constructor(){
