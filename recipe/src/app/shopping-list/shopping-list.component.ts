@@ -21,6 +21,27 @@ export class ShoppingListComponent implements OnInit {
 
   createdShoppingList(shoppingData:{name:string,amount:number}){
     this.ingredients.push(new Ingredient(shoppingData.name,shoppingData.amount))
+    // Declare a new array
+    let newArray = [];
+ 
+    // Declare an empty object
+    let uniqueObject:any = {};
+
+    // Loop for the array elements
+    for (let i in this.ingredients) {
+
+        // Extract the title
+        let objTitle = this.ingredients[i]['name'];
+
+        // Use the title as the index
+        uniqueObject[objTitle] = this.ingredients[i];
+    }
+
+    // Loop to push unique object into array
+    for (let i in uniqueObject) {
+      newArray.push(uniqueObject[i]);
+    }
+    this.ingredients = newArray
   }
 
 }
