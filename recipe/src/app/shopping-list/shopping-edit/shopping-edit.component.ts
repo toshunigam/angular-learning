@@ -19,4 +19,9 @@ export class ShoppingEditComponent implements OnInit {
   addShopping(){
     this.createdList.emit({name:this.shoppingName,amount:this.amount})
   }
+
+  deleteShopping(){
+    this.shoppingName=''
+    this.amount=0
+  }
 }
