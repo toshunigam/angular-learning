@@ -44,4 +44,12 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients = newArray
   }
 
+  deleteShopping(ingredient:Ingredient){
+    console.log('delete item',ingredient)
+    // return this.ingredients.filter((item:Ingredient)=> item.name !== ingredient.name)
+    const res = this.ingredients.filter((item:Ingredient)=> item.name !== ingredient.name)
+    // console.log(res)
+    this.ingredients = res
+  }
+
 }

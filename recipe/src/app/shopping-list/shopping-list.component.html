@@ -3,7 +3,10 @@
         <app-shopping-edit (createdList)="createdShoppingList($event)"></app-shopping-edit>
         <hr />
         <ul class="list-group">
-            <li *ngFor="let ingredient of ingredients" class="list-group-item"><a class="list-item-link" style="cursor: pointer;">{{ ingredient.name }} ({{ ingredient.amount }})</a></li>
+            <li *ngFor="let ingredient of ingredients" class="list-group-item">
+                <a class="list-item-link" style="cursor: pointer;">{{ ingredient.name }} ({{ ingredient.amount }})</a>
+                <button class="btn btn-danger m-1" type="button" (click)="deleteShopping(ingredient)">X</button>
+            </li>
         </ul>
     </div>
 </div>
