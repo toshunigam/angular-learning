@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { FirebaseComponent } from './firebase/firebase.component';
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 
 const appRoute:Routes = [
   {path:'',component:HomeComponent},
@@ -44,7 +45,8 @@ const appRoute:Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoute),
-    HttpClientModule
+    HttpClientModule,
+    NgxScannerQrcodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
