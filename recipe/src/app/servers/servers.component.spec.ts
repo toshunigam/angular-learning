@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ServersComponent } from './servers.component';
+import { FilterPipe } from '../shared/filter.pips';
+import { ShortenPipe } from '../shared/shorten.pipe';
+import { Translation } from '../shared/translation.pipe';
 
 describe('ServersComponent', () => {
   let component: ServersComponent;
@@ -8,7 +11,7 @@ describe('ServersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ServersComponent ]
+      declarations: [ ServersComponent, FilterPipe, ShortenPipe, Translation ]
     })
     .compileComponents();
   });
