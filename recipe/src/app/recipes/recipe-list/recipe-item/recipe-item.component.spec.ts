@@ -29,12 +29,12 @@ describe('RecipeItemComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Recipe Click event', () => {
+  it('Check Recipe data type', () => {
     let recipe = service.getRecipes()
-    console.log('Toshu', recipe)
+    // console.log('Toshu', recipe)
     recipe.map(item=>{
-      console.log('item',item)
-      expect(item).toBeTruthy()
+      // console.log('TOshu', item)
+      expect(typeof item).toEqual('object')
     })
 
     
