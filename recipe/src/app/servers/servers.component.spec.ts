@@ -25,4 +25,8 @@ describe('ServersComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('server object should create', () => {
+    expect(typeof component.servers).toEqual('object');
+  });
 });
