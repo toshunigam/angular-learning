@@ -10,6 +10,7 @@ import { ProductService } from '../_services/product.service';
 export class ProductComponent implements OnInit {
 
   productList:Product[]
+  products: any[] = [];
   constructor(private productService:ProductService) { 
     this.productList = []
   }
@@ -24,6 +25,10 @@ export class ProductComponent implements OnInit {
   onDelete(product:Product){
     // console.log(product)
     this.productService.deleteProduct(product)
+  }
+
+  getProducts(){
+    this.products = this.productService.getProducts();
   }
 
 }
